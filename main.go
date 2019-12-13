@@ -26,7 +26,7 @@ func diameterOfBinaryH (root *TreeNode, currDiameter int, currrHighestDiameter *
     rightDepth = diameterOfBinaryH(root.Right, leftDepth+1, currrHighestDiameter)
   }
 
-  return int(math.Max(float64(leftDepth), float64(rightDepth)))
+  return int(math.Max(float64(leftDepth+1), float64(rightDepth+1)))
 
 }
 
@@ -35,7 +35,7 @@ func diameterOfBinary(root *TreeNode) int {
     return 0
   }
 
-  int result var
+  var result int
 
   diameterOfBinaryH(root, 0, &result)
 
